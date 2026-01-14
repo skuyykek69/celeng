@@ -961,7 +961,7 @@ span {
 
 .project .project-container {
     justify-content: center;
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     gap: 2.5rem;
