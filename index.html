@@ -1,251 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PORTOFOLIO</title>
-     <link rel="icon" href="https://avatars.githubusercontent.com/u/176445831?v=4&size=64" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/176445831?v=4&size=64" type="image/x-icon" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+    <header class="header" role="banner">
+        <a href="#home" class="logo">PORTOFOLIO</a>
 
-    <header class="header">
-        <a href="#" class="logo">PORTOFOLIO</a>
-
-        <nav class="navbar">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
-            <a href="#services">Services</a>
             <a href="#project">Project</a>
-            <!-- <a href="#contact">Contact</a> -->
+            <!-- Contact section deliberately removed; uncomment if needed -->
         </nav>
 
-        <div class="bx bx-moon" id="darkMode-icon"></div>
+        <div class="bx bx-moon" id="darkMode-icon" role="button" aria-label="Toggle dark mode" tabindex="0"></div>
 
-        <div class="bx bx-menu" id="menu-icon"></div>
+        <div class="bx bx-menu" id="menu-icon" role="button" aria-label="Toggle menu" tabindex="0" aria-expanded="false"></div>
     </header>
 
-    <section class="home" id="home">
-        <div class="home-content">
-            <h3>Halo, Saya</h3>
-            <h1>Aldo Yonanda</h1>
-            <p>
-                Seorang programmer yang masih harus banyak belajar.
-            </p>
-            <p>Sekarang saya masih mengenyam pendidikan di SMKS Mahaputra Cerdas Utama Jurusan PPLG.</p>
+    <main>
+        <section class="home" id="home" role="region" aria-label="Home section">
+            <div class="home-content">
+                <h3>Halo, Saya</h3>
+                <h1>Aldo Yonanda</h1>
+                <p>Seorang programmer yang masih harus banyak belajar.</p>
+                <p>Sekarang saya masih mengenyam pendidikan di SMKS Mahaputra Cerdas Utama Jurusan PPLG.</p>
 
-            <div class="social-media">
-                <a href="https://github.com/JajangMediatek"target="_blank"><i class='bx bxl-github'></i></a>
-                <a href="https://www.instagram.com/aldoyf2007" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
-                <a href="https://wa.me/6283820418906" target="_blank"><i class='bx bxl-whatsapp'></i></a>
-                <a href="mailto:aldoyonandaf@gmail.com" target="_blank" class='bx bxl-gmail'>
-
-                </a>
-            </div>
-
-            <a href="images/CV_KREATIF_ALDO_YONANDA_FIRMANSYAH_revisi1.pdf" target="_blank" class="btn">Lihat CV</a>
-        </div>
-
-        <div class="profession-container">
-            <div class="profession-box">
-                <div class="profession" style="--i:0;">
-                    <i class='bx bx-code-alt'></i>
-                    <h3>Web Developer</h3>
-                </div>
-                <div class="profession" style="--i:1;">
-                    <i class='bx bx-code-alt'></i>
-                    <h3>Programmer</h3>
-                </div>
-                <div class="profession" style="--i:2;">
-                    <i class='bx bx-code-alt'></i>
-                    <h3>Web Designer</h3>
-                </div>
-                <div class="profession" style="--i:3;">
-                    <i class='bx bx-code-alt'></i>
-                    <h3>Fullstack Developer</h3>
+                <div class="social-media" aria-hidden="false">
+                    <a href="https://github.com/JajangMediatek" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.instagram.com/aldoyf2007" target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram-alt'></i></a>
+                    <a href="https://wa.me/6283820418906" target="_blank" rel="noopener noreferrer"><i class='bx bxl-whatsapp'></i></a>
+                    <a href="mailto:aldoyonandaf@gmail.com" target="_blank" rel="noopener noreferrer"><i class='bx bxl-gmail'></i></a>
                 </div>
 
-                <div class="circle"></div>
+                <a href="images/CV_KREATIF_ALDO_YONANDA_FIRMANSYAH_revisi1.pdf" target="_blank" rel="noopener noreferrer" class="btn">Lihat CV</a>
             </div>
 
-            <div class="overlay"></div>
-        </div>
-
-        <div class="home-img">
-            <img src="images/home.png" alt="">
-        </div>
-    </section>
-
-    <section class="about" id="about">
-        <div class="about-img">
-            <img src="images/about.png" alt="">
-        </div>
-
-        <div class="about-content">
-            <h2 class="heading">About <span>Me</span></h2>
-            <h3>
-                Halo, dan selamat datang di portofolio saya! Nama saya Aldo Yonanda Firmansyah seorang Programmer yang suka sekali belajar hal baru.
-            </h3>
-            
-            <p>
-               Saya memiliki minat tinggi di bidang Teknologi Informasi, khususnya dalam pengembangan web. Saya memiliki ketertarikan untuk terus mempelajari dan mengembangkan kemampuan di bidang pemrograman, baik pada sisi frontend maupun backend, serta memahami dasar perancangan sistem dan pengelolaan basis data.
-            </p>
-            <a href="https://www.linkedin.com/in/aldo-yonanda-firmansyah-610a19362?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="btn">HIRE ME</a>
-        </div>
-    </section>
-
-    <section class="services" id="services">
-        <h2 class="heading">My <span>Services</span></h2>
-
-        <div class="services-container">
-            <div class="services-box">
-                <i class='bx bxs-paint'></i>
-                <h3>Front end Developer</h3>
-                <p>Saya berpengalaman dalam membangun antarmuka yang responsif dan menarik menggunakan CSS, JavaScript, Tailwind, dan Bootstrap. Saya memastikan pengalaman pengguna yang optimal dengan desain yang modern dan fungsional.</p>
-                <!-- <a href="#" class="btn">Read More</a> -->
-            </div>
-            <div class="services-box">
-                <i class='bx bx-code-alt'></i>
-                <h3>Backend Developer</h3>
-                <p>Saya menguasai pengembangan backend menggunakan Node.js, jQuery, dan Laravel. Saya mampu membangun sistem yang efisien, aman, dan scalable untuk mendukung kebutuhan aplikasi.</p>
-                <!-- <a href="#" class="btn">Read More</a> -->
-            </div>
-            <div class="services-box">
-                <i class='bx bx-bar-chart-alt'></i>
-                <h3>Database Desainer</h3>
-                <p>Saya memiliki keahlian dalam merancang dan mengelola database menggunakan MySQL serta real-time database. Saya memastikan struktur data yang optimal untuk performa dan skalabilitas aplikasi..</p>
-                <!-- <a href="#" class="btn">Read More</a> -->
-            </div>
-        </div>
-    </section>
-
-    <section class="project" id="project">
-        <h2 class="heading">Latest <span>Project</span></h2>
-
-        <div class="project-container">
-            <div class="project-box">
-                <img src="images/POS.png" alt="">
-
-                <div class="project-layer">
-                    <h4>My Cashier</h4>
-                    <p>Sebuah aplikasi Point of sale berbasis website untuk mengelola bisnis toko sembako.</p>
-                    <a href="https://github.com/JajangMediatek/My-Cashier.git" target="_blank"><i class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-            <div class="project-box">
-                <img src="images/A.C.A.B.png" alt="">
-
-                <div class="project-layer">
-                    <h4>A.C.A.B.</h4>
-                    <p> Website berisi informasi demo di tanggal 28 agustus 2025 - 2 september 2025.</p>
-                    <a href="https://mikamibrian.github.io/A.C.A.B/" target="_blank"><i class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="testimonial-container">
-        <h2 class="heading">Valuable <span>Testimonial</span></h2>
-
-        <div class="testimonial-wrapper">
-            <div class="testimonial-box mySwiper">
-                <div class="testimonial-content swiper-wrapper">
-                    <div class="testimonial-slide swiper-slide">
-                        <img src="images/anime1.jpg" alt="">
-                        <h3></h3>
-                        <p>"This web portfolio is very responsive across devices. I found it easy to explore projects and information with a clean layout, both on my laptop and mobile. A smart choice for showcasing creativity."</p>
+            <div class="profession-container" aria-hidden="true">
+                <div class="profession-box">
+                    <div class="profession" style="--i:0;">
+                        <i class='bx bx-code-alt'></i>
+                        <h3>Web Developer</h3>
                     </div>
-                    <div class="testimonial-slide swiper-slide">
-                        <img src="images/anime2.jpg" alt="">
-                        <h3></h3>
-                        <p>"I'm impressed with the responsiveness of this portfolio. The dynamic and flexible design makes for a really enjoyable user experience, even when accessed from a tablet. Cool!"</p>
+                    <div class="profession" style="--i:1;">
+                        <i class='bx bx-code-alt'></i>
+                        <h3>Programmer</h3>
                     </div>
-                    <div class="testimonial-slide swiper-slide">
-                        <img src="images/anime3.jpg" alt="">
-                        <h3></h3>
-                        <p>"It was important to me to be able to access the portfolio easily, and I was very pleased with the level of responsiveness. The elegant design and well-organized content make it a great reference."</p>
+                    <div class="profession" style="--i:2;">
+                        <i class='bx bx-code-alt'></i>
+                        <h3>Web Designer</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about" role="region" aria-label="About section">
+            <div class="about-img">
+                <img src="images/profile.jpg" alt="Foto Aldo Yonanda" loading="lazy" />
+            </div>
+
+            <div class="about-content">
+                <h2>About <span>Me</span></h2>
+                <h3>Frontend & Backend Developer</h3>
+                <p>Saya berpengalaman dalam membangun antarmuka yang responsif dan menarik menggunakan CSS, JavaScript, Tailwind, dan Bootstrap.</p>
+                <p>Saya juga menguasai pengembangan backend menggunakan Node.js, jQuery, dan Laravel, serta desain database MySQL.</p>
+            </div>
+        </section>
+
+        <section class="project" id="project" role="region" aria-label="Project section">
+            <h2 class="heading">Latest <span>Project</span></h2>
+
+            <div class="project-container">
+                <div class="project-box">
+                    <img src="images/POS.png" alt="POS Project screenshot" loading="lazy" />
+                    <div class="project-layer">
+                        <h4>My Cashier</h4>
+                        <p>Sebuah aplikasi Point of sale berbasis website untuk mengelola bisnis toko sembako.</p>
+                        <a href="https://github.com/JajangMediatek/My-Cashier.git" target="_blank" rel="noopener noreferrer"><i class='bx bx-link-external' aria-hidden="true"></i></a>
                     </div>
                 </div>
 
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </div>
-
-
-    <section class="certificate" id="certificate">
-        <h2 class="heading">My <span>Certificate</span></h2>
-
-        <div class="certificate-container">
-            <div class="certificate-box">
-                <img src="images/certificate.jpg" alt="">
-
-                <div class="certificate-layer">
-                    <h4>Trial class Telkom University</h4>
-                    <p>Sertifikat setelah mengikuti Trial class di Telkom University Pada Jurusan S1 Informatika.</p>
+                <div class="project-box">
+                    <img src="images/A.C.A.B.png" alt="A.C.A.B. Project screenshot" loading="lazy" />
+                    <div class="project-layer">
+                        <h4>A.C.A.B.</h4>
+                        <p>Website berisi informasi demo di tanggal 28 agustus 2025 - 2 september 2025.</p>
+                        <a href="https://mikamibrian.github.io/A.C.A.B/" target="_blank" rel="noopener noreferrer"><i class='bx bx-link-external' aria-hidden="true"></i></a>
+                    </div>
                 </div>
             </div>
+        </section>
+    </main>
 
-            <div class="certificate-box">
-                <img src="images/certificate2.jpg" alt="">
-
-                <div class="certificate-layer">
-                    <h4>Murid berprestasi</h4>
-                    <p>Saya juga beberapa kali menyandang gelar sebagai murid berprestasi selama saya mengenyam pendidikan.</p>
-                </div>
-            </div>
-
-<div class="certificate-box">
-                <img src="images/certificate4.jpg" alt="">
-
-                <div class="certificate-layer">
-                    <h4>Kunjungan Industri</h4>
-                    <p>Saya telah berpengalaman mengikuti kegiatan kunjin dan memahami bagaimana industri bekerja.</p>
-                </div>
-</div>
-        </div>
-    </section>
-
-
-    <!-- <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me!</span></h2>
-
-        <form action="#">
-            <div class="input-box">
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email Address">
-            </div>
-            <div class="input-box">
-                <input type="number" placeholder="Mobile Number">
-                <input type="text" placeholder="Email Subject">
-            </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <input type="submit" value="Send Message" class="btn">
-        </form>
-    </section> -->
-
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="footer-text">
-            <p>Made by  &copy; Aldo Yonanda Firmansyah | All Rights Reserved.</p>
+            <p>Made by &copy; Aldo Yonanda Firmansyah | All Rights Reserved.</p>
         </div>
 
         <div class="footer-iconTop">
-            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+            <a href="#home" aria-label="Back to top"><i class='bx bx-up-arrow-alt'></i></a>
         </div>
     </footer>
 
-
-    <script src="https://unpkg.com/scrollreveal"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
+    <!-- only local script, kept at end for performance -->
     <script src="script.js"></script>
 </body>
 
