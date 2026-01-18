@@ -1,73 +1,104 @@
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
+// Improved script.js — wrapped in DOMContentLoaded, safer selectors, RAF scrolling, dark-mode persistence
+document.addEventListener('DOMContentLoaded', () => {
+  const menuIcon = document.querySelector('#menu-icon');
+  const navbar = document.querySelector('.navbar');
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('header nav a');
+  const header = document.querySelector('.header');
+  const darkModeIcon = document.querySelector('#darkMode-icon');
 
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-};
+  const setMenuAria = (expanded) => {
+    if (menuIcon) menuIcon.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+  };
 
+  if (menuIcon) {
+    menuIcon.setAttribute('role', 'button');
+    menuIcon.setAttribute('tabindex', '0');
+    menuIcon.setAttribute('aria-label', 'Toggle navigation menu');
+    setMenuAria(false);
 
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
-
-window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
-
-        if(top >= offset && top < offset + height) {
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-            });
-        };
+    menuIcon.addEventListener('click', () => {
+      menuIcon.classList.toggle('bx-x');
+      if (navbar) navbar.classList.toggle('active');
+      const expanded = menuIcon.classList.contains('bx-x');
+      setMenuAria(expanded);
     });
 
+    menuIcon.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        menuIcon.click();
+      }
+    });
+  }
 
-let header = document.querySelector('.header');
+  let ticking = false;
+  const onScroll = () => {
+    const top = window.scrollY;
 
-header.classList.toggle('sticky', window.scrollY > 100);
+    sections.forEach(sec => {
+      const offset = sec.offsetTop - 150;
+      const height = sec.offsetHeight;
+      const id = sec.getAttribute('id');
 
+      if (top >= offset && top < offset + height) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        const selector = `header nav a[href="#${id}"]`;
+        const activeLink = document.querySelector(selector);
+        if (activeLink) {
+          activeLink.classList.add('active');
+        }
+      }
+    });
 
-menuIcon.classList.remove('bx-x');
-navbar.classList.remove('active');
+    if (header) header.classList.toggle('sticky', window.scrollY > 100);
 
-};
+    if (menuIcon) menuIcon.classList.remove('bx-x');
+    if (navbar) navbar.classList.remove('active');
+    setMenuAria(false);
+  };
 
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        onScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
 
-var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 50,
-    loop: true,
-    grabCursor: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
+  // Dark mode with persistence
+  const applyDarkMode = (isDark) => {
+    document.body.classList.toggle('dark-mode', isDark);
+    if (darkModeIcon) darkModeIcon.classList.toggle('bx-sun', isDark);
+  };
+
+  const stored = localStorage.getItem('celeng-dark-mode');
+  const prefersDark = stored !== null ? stored === 'true' : window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyDarkMode(prefersDark);
+
+  if (darkModeIcon) {
+    darkModeIcon.setAttribute('role', 'button');
+    darkModeIcon.setAttribute('tabindex', '0');
+    darkModeIcon.setAttribute('aria-label', 'Toggle dark mode');
+    darkModeIcon.setAttribute('aria-pressed', prefersDark ? 'true' : 'false');
+
+    darkModeIcon.addEventListener('click', () => {
+      const isNowDark = !document.body.classList.contains('dark-mode');
+      applyDarkMode(isNowDark);
+      localStorage.setItem('celeng-dark-mode', String(isNowDark));
+      darkModeIcon.setAttribute('aria-pressed', isNowDark ? 'true' : 'false');
+    });
+
+    darkModeIcon.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        darkModeIcon.click();
+      }
+    });
+  }
+
+  // initial state
+  onScroll();
 });
-
-
-let darkModeIcon = document.querySelector('#darkMode-icon');
-
-darkModeIcon.onclick = () => {
-    darkModeIcon.classList.toggle('bx-sun');
-    document.body.classList.toggle('dark-mode');
-};
-
-
-ScrollReveal({
-    distance: '80px',
-    duration: 2000,
-    delay: 200
-});
-
-ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img img, .services-container, .project-box, .testimonial-wrapper, .contact form, .certificate-box', { origin: 'bottom' });
-ScrollReveal().reveal('.home-content h1, .about-img img', { origin: 'left' });
-ScrollReveal().reveal('.home-content h3, .home-content p, .about-content', { origin: 'right' });
