@@ -289,10 +289,12 @@ section {
 .home-img img {
     position: absolute;
     bottom: 0;
-    right: 40px;
+    right: -60px;
     pointer-events: none;
-    max-width: 480px;
-    max-height: 100vh;
+    /* max-width: 480px;
+    max-height: 10000px; */
+    height: 600px;
+    width: 550px;
 }
 
 span {
@@ -347,6 +349,7 @@ span {
 }
 
 .services-container .services-box {
+    height: 330px;
     flex: 1 1 30rem;
     background: var(--bg-color);
     padding: 3rem 2rem 4rem;
@@ -1010,7 +1013,7 @@ span {
 }
 
 .project-layer h4 {
-    padding: 4px;
+    padding: 10px;
     font-size: 3rem;
 }
 
